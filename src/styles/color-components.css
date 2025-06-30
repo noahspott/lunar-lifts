@@ -1,0 +1,8 @@
+@layer components {
+  .bg-gradient-dark {
+    @apply bg-gradient-to-r from-[#1d244e] to-[#000000];
+  }
+  .bg-gradient-light {
+    @apply bg-radial-[50%_100%] from-[#ffffff] from-45% to-[#DCDDE1];
+  }
+}

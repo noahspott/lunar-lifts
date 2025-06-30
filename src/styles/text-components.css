@@ -1,0 +1,37 @@
+/* 
+  Only control these paramters:
+    - font face
+    - font size
+    - tracking
+    - leading
+*/
+
+@layer components {
+  .heading-page {
+    @apply font-heading text-[64px];
+  }
+  .heading-section {
+    @apply font-heading text-5xl;
+  }
+  .heading-subsection {
+    @apply font-heading text-[32px];
+  }
+  .heading-card {
+    @apply font-heading text-[32px];
+  }
+  .heading-kicker {
+    @apply font-heading text-2xl;
+  }
+
+  .subtitle {
+    @apply font-body text-[22px] leading-[150%];
+  }
+
+  .body-copy {
+    @apply font-body text-lg leading-[150%];
+  }
+
+  .nav-text {
+    @apply font-body text-sm tracking-[10%];
+  }
+}

@@ -1,1 +1,15 @@
 @import "tailwindcss";
+@import "./font-faces.css";
+@import "./text-components.css";
+@import "./color-components.css";
+
+@theme {
+  --font-heading: "Montserrat", "sans-serif";
+  --font-body: "hind", "sans-serif";
+
+  --font-weight-1: 400;
+  --font-weight-2: 700;
+
+  --color-lunar-primary: #191f41;
+  --color-accent-500: #f30525;
+}
