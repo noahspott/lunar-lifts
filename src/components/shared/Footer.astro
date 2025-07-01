@@ -1,11 +1,52 @@
 ---
+// Components
+import { Image } from "astro:assets";
+import Content from "./Content";
+import ContactItem from "./ContactItem";
 
+// Data
+import { links } from "@/data/links";
+import { PHONE, EMAIL } from "@/data/business";
 ---
 
-<footer class="bg-gradient-dark">
-  <p class="text-body-copy">
-    <span class="font-2">Lunar Lifts</span> is the Four Corners' modern bounce house
-    rental company—clean gear, on-time service, no stress. We make parties easier,
-    smoother, and way more fun.
-  </p>
+<footer class="bg-gradient-dark text-lunar-white py-24">
+  <Content className="grid grid-rows-3">
+    <div class="flex flex-col justify-between gap-8 md:flex-row">
+      <div class="flex max-w-[500px] flex-col gap-8">
+        <div class="bg-lunar-white size-[150px] rounded-full"></div>
+        <p class="text-body-copy">
+          <span class="font-2">Lunar Lifts</span> is the Four Corners' modern bounce
+          house rental company—clean gear, on-time service, no stress. We make parties
+          easier, smoother, and way more fun.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+          <ContactItem label="Phone" contactInfo={PHONE} type="PHONE" />
+          <ContactItem label="Email" contactInfo={EMAIL} type="EMAIL" />
+        </div>
+      </div>
+
+      <ul class="flex flex-col items-start justify-end md:items-end">
+        {
+          links.map((link) => {
+            return (
+              <li>
+                <a class="heading-card font-2 uppercase" href={link.href}>
+                  {link.display}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <div class="bg-lunar-white my-8 h-px w-full rounded-full md:my-16"></div>
+    <div class="font-body flex justify-between text-sm">
+      <p>© 2025 Lunar Lifts</p>
+      <p>
+        Developed by <a class="underline" href="https://summitavenueweb.com"
+          >Summit Avenue Web Solutions</a
+        >
+      </p>
+    </div>
+  </Content>
 </footer>
