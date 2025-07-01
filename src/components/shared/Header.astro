@@ -1,0 +1,45 @@
+---
+// Components
+import { Content, Link, MenuButton } from "@/components/shared";
+
+// Data
+import { links } from "@/data/links";
+import { PHONE } from "@/data/business";
+---
+
+<header class="bg-gradient-dark flex h-24 w-full items-center text-white">
+  <Content>
+    <div class="flex w-full justify-between">
+      <nav class="flex items-center gap-[60px]">
+        <a href="/" class="font-heading font-2 text-[22px]">
+          <h1>Lunar Lifts</h1>
+        </a>
+        <ul class="hidden gap-8 md:flex lg:gap-[60px]">
+          {
+            links.map((link) => {
+              return (
+                <li>
+                  <a class="nav-text uppercase" href={link.href}>
+                    {link.display}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+      <div class="flex gap-10">
+        <Link
+          className="hidden sm:block sm:self-end"
+          href={`tel:${PHONE}`}
+          variant="PRIMARY"
+          color="LIGHT"
+          size="SM"
+        >
+          {PHONE}
+        </Link>
+        <MenuButton className="md:hidden" client:load />
+      </div>
+    </div>
+  </Content>
+</header>
