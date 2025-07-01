@@ -1,8 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+// Components
+import Layout from "../layouts/Layout.astro";
+import {
+  Hero,
+  ProductHighlight,
+  WhyChooseUs,
+  FeaturedFaqs,
+} from "@/components/home";
+import { ContactSection } from "@/components/shared";
 ---
 
 <Layout>
-	<h1 class="">Hello World</h1>
+  <Hero />
+  <ProductHighlight />
+  <WhyChooseUs />
+  <FeaturedFaqs />
+  <ContactSection client:load />
 </Layout>

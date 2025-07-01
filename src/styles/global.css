@@ -11,5 +11,13 @@
   --font-weight-2: 700;
 
   --color-lunar-primary: #191f41;
-  --color-accent-500: #f30525;
+  --color-lunar-accent: #f30525;
+  --color-lunar-white: #ffffff;
+  --color-lunar-white-2: #e9e9e9;
+}
+
+@layer utilities {
+  .section {
+    @apply py-48;
+  }
 }

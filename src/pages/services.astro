@@ -1,7 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro"
+// Components
+import Layout from "../layouts/Layout.astro";
+import { SubpageHeader, ContactSection } from "@/components/shared";
+import {
+  MainProducts,
+  SecondaryProducts,
+  HowItWorks,
+} from "@/components/services";
 ---
 
 <Layout>
-  
+  <SubpageHeader>Services</SubpageHeader>
+  <MainProducts />
+  <SecondaryProducts />
+  <HowItWorks />
+  <ContactSection client:load />
 </Layout>

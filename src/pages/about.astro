@@ -1,7 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro"
+// Components
+import Layout from "../layouts/Layout.astro";
+import { SubpageHeader } from "@/components/shared";
+import { WhoWeAre, WhyWeDoIt } from "@/components/about";
 ---
 
 <Layout>
-  
+  <SubpageHeader>About Lunar Lifts</SubpageHeader>
+  <WhoWeAre />
+  <WhyWeDoIt />
 </Layout>

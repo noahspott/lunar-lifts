@@ -1,11 +1,9 @@
 ---
-
 // Components
-import Header from "@/components/shared/Header"
+import { Header, Footer } from "@/components/shared";
 
 // Styles
 import "./src/styles/global.css";
-
 ---
 
 <!doctype html>
@@ -18,8 +16,9 @@ import "./src/styles/global.css";
     <title>Lunar Lifts</title>
   </head>
   <body class="bg-gradient-light">
-		<Header />
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 

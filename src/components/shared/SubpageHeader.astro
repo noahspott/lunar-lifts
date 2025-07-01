@@ -1,0 +1,9 @@
+---
+const { className = "" } = Astro.props;
+---
+
+<section class="bg-gradient-dark py-24">
+  <h1 class={`heading-page font-2 text-lunar-white text-center ${className}`}>
+    <slot />
+  </h1>
+</section>
