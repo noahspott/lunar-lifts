@@ -6,3 +6,4 @@ export { default as Faq } from "./Faq.astro";
 export { default as Content } from "./Content";
 export { default as Link } from "./Link";
 export { default as MenuButton } from "./menu/MenuButton";
+export { default as ContactItem } from "./ContactItem";
