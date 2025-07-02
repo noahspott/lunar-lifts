@@ -31,7 +31,7 @@ export default function LinkButton({
   children: React.ReactNode;
 }) {
   const classes = clsx(
-    "font-heading font-1 border px-4 drop-shadow-2xl select-none hover:cursor-pointer",
+    "font-heading font-1 border px-4 drop-shadow-2xl select-none hover:cursor-pointer text-center",
     {
       "py-3 text-base": size === "SM",
     },
@@ -53,7 +53,7 @@ export default function LinkButton({
   );
 
   const ChildrenAndIcon = (
-    <span className="flex items-center gap-2">
+    <span className="flex items-center justify-center gap-2">
       {Icon && <Icon className="size-4.5" />}
       {children}
     </span>

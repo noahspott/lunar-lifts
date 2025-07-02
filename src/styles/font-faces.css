@@ -4,7 +4,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/montserrat-v30-latin/montserrat-v30-latin-regular.woff2")
+  src: url("/fonts/montserrat-v30-latin/montserrat-v30-latin-regular.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-italic - latin */
@@ -13,7 +13,7 @@
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 400;
-  src: url("./fonts/montserrat-v30-latin/montserrat-v30-latin-italic.woff2")
+  src: url("/fonts/montserrat-v30-latin/montserrat-v30-latin-italic.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-700 - latin */
@@ -22,7 +22,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/montserrat-v30-latin/montserrat-v30-latin-700.woff2")
+  src: url("/fonts/montserrat-v30-latin/montserrat-v30-latin-700.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-700italic - latin */
@@ -31,7 +31,7 @@
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 700;
-  src: url("./fonts/montserrat-v30-latin/montserrat-v30-latin-700italic.woff2")
+  src: url("/fonts/montserrat-v30-latin/montserrat-v30-latin-700italic.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
@@ -41,8 +41,7 @@
   font-family: "Hind";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/hind-v17-latin/hind-v17-latin-regular.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/hind-v17-latin/hind-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* hind-700 - latin */
 @font-face {
@@ -50,5 +49,5 @@
   font-family: "Hind";
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/hind-v17-latin/hind-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/hind-v17-latin/hind-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
