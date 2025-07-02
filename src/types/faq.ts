@@ -1,4 +1,4 @@
-export type Faq = {
+export type FaqType = {
   question: string;
   answer: string;
 };

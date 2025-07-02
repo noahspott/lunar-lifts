@@ -31,7 +31,7 @@ export default function LinkButton({
   children: React.ReactNode;
 }) {
   const classes = clsx(
-    "font-heading font-1 border px-4 drop-shadow-2xl select-none hover:cursor-pointer text-center",
+    "font-heading font-1 border px-4 drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase",
     {
       "py-3 text-base": size === "SM",
     },
