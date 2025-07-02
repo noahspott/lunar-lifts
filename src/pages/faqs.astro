@@ -1,7 +1,12 @@
 ---
 // Components
 import Layout from "../layouts/Layout.astro";
-import { SubpageHeader, Faq, ContactSection } from "@/components/shared";
+import {
+  SubpageHeader,
+  Faq,
+  ContactSection,
+  Content,
+} from "@/components/shared";
 
 // Data
 import { faqs } from "@/data/faqs";
@@ -9,18 +14,20 @@ import { faqs } from "@/data/faqs";
 
 <Layout>
   <SubpageHeader>FAQs</SubpageHeader>
-  <section class="section">
-    <ul class="flex flex-col gap-[60px]">
-      {
-        faqs.map((faq) => {
-          return (
-            <li>
-              <Faq variant="LIGHT" faq={faq} />
-            </li>
-          );
-        })
-      }
-    </ul>
+  <section class="section bg-lunar-white">
+    <Content>
+      <ul class="flex flex-col gap-[60px]">
+        {
+          faqs.map((faq) => {
+            return (
+              <li>
+                <Faq variant="LIGHT" faq={faq} />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </Content>
   </section>
   <ContactSection client:load />
 </Layout>
