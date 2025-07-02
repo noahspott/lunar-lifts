@@ -1,13 +1,16 @@
 ---
 // Components
-import { Content, Link, MenuButton } from "@/components/shared";
+import { Content, LinkButton, MenuButton } from "@/components/shared";
+import { PhoneCall } from "lucide-react";
 
 // Data
 import { links } from "@/data/links";
 import { PHONE } from "@/data/business";
 ---
 
-<header class="bg-gradient-dark flex h-24 w-full items-center text-white">
+<header
+  class="bg-gradient-dark flex h-24 w-full items-center text-white select-none"
+>
   <Content>
     <div class="flex w-full justify-between">
       <nav class="flex items-center gap-[60px]">
@@ -29,15 +32,16 @@ import { PHONE } from "@/data/business";
         </ul>
       </nav>
       <div class="flex gap-10">
-        <Link
+        <LinkButton
           className="hidden sm:block sm:self-end"
           href={`tel:${PHONE}`}
           variant="PRIMARY"
           color="LIGHT"
           size="SM"
+          Icon={PhoneCall}
         >
           {PHONE}
-        </Link>
+        </LinkButton>
         <MenuButton className="md:hidden" client:load />
       </div>
     </div>
