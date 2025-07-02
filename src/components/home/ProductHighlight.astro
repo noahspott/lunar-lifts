@@ -1,0 +1,45 @@
+---
+import { Content, LinkButton } from "@/components/shared";
+
+const products = [
+  {
+    name: "Castle Bounce House",
+    description: "18' Bounce House",
+    color: "#D2024A",
+    href: "/service",
+  },
+  {
+    name: "Waterslide",
+    description: "18' Waterslide",
+    color: "#0182A7",
+    href: "/service",
+  },
+  {
+    name: "Castle Bounce House",
+    description: "18' Bounce House",
+    color: "#C1A800",
+    href: "/service",
+  },
+];
+---
+
+<section class="section bg-gradient-dark">
+  <Content>
+    <div class="text-lunar-white flex flex-col gap-4">
+      <h2 class="heading-section font-2">
+        The best inflatables. <span class="underline underline-offset-[25%]"
+          >Zero Hassle</span
+        >.
+      </h2>
+      <p class="subtitle max-w-3xl">Clean, modern, and ready for fun.</p>
+      <LinkButton
+        size="MD"
+        href="/services"
+        color="LIGHT"
+        variant="SECONDARY"
+        className="mt-4 self-start">View All Services</LinkButton
+      >
+    </div>
+    <div></div>
+  </Content>
+</section>

@@ -1,1 +1,34 @@
+---
+// Components
+import { Content, Faq } from "@/components/shared";
 
+// Types
+import type { FaqType } from "@/types/faq";
+
+// Data
+import { faqs } from "@/data/faqs";
+
+const fiveFaqs = faqs.slice(0, 5);
+---
+
+<section class="section bg-gradient-dark">
+  <Content>
+    <div class="text-lunar-white mb-[60px] flex flex-col gap-8">
+      <h2 class="heading-section font-2">FAQs</h2>
+      <p class="subtitle max-w-3xl">
+        Because you've got questions, and we've got answers.
+      </p>
+    </div>
+    <ul class="flex flex-col gap-[60px]">
+      {
+        fiveFaqs.map((faq) => {
+          return (
+            <li>
+              <Faq theme="DARK" faq={faq} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Content>
+</section>

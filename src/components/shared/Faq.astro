@@ -1,23 +1,23 @@
 ---
-import type { Faq } from "@/types/faq";
+import type { FaqType } from "@/types/faq";
 
 export type FaqProps = {
-  faq: Faq;
-  variant: "LIGHT" | "DARK";
+  faq: FaqType;
+  theme: "LIGHT" | "DARK";
 };
 
 const {
   faq: { question, answer },
-  variant,
+  theme,
 } = Astro.props as FaqProps;
 ---
 
-<div>
+<div class="max-w-4xl">
   <p
     class:list={[
       "heading-subsection font-2 mb-2",
-      { "text-lunar-white": variant === "DARK" },
-      { "text-lunar-primary": variant === "LIGHT" },
+      { "text-lunar-white": theme === "DARK" },
+      { "text-lunar-primary": theme === "LIGHT" },
     ]}
   >
     {question}
@@ -25,8 +25,8 @@ const {
   <p
     class:list={[
       "body-copy",
-      { "text-lunar-white-2": variant === "DARK" },
-      { "text-black": variant === "LIGHT" },
+      { "text-lunar-white-2": theme === "DARK" },
+      { "text-black": theme === "LIGHT" },
     ]}
   >
     {answer}

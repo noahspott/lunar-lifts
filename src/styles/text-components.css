@@ -8,7 +8,7 @@
 
 @layer components {
   .heading-page {
-    @apply font-heading text-[64px];
+    @apply font-heading text-[64px] leading-tight;
   }
   .heading-section {
     @apply font-heading text-5xl;

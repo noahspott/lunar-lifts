@@ -31,12 +31,12 @@ export default function LinkButton({
   children: React.ReactNode;
 }) {
   const classes = clsx(
-    "font-heading font-1 border px-4 drop-shadow-2xl select-none hover:cursor-pointer text-center",
+    "font-heading font-1 border drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase",
     {
-      "py-3 text-base": size === "SM",
+      "py-3 px-4 text-base": size === "SM",
     },
     {
-      "py-4 text-lg": size === "MD",
+      "py-4 px-8 text-lg": size === "MD",
     },
     {
       "bg-lunar-white border-lunar-white text-black": color === "LIGHT",
@@ -48,7 +48,10 @@ export default function LinkButton({
       "text-lunar-white border-lunar-accent bg-lunar-accent":
         color === "ACCENT",
     },
-    { "bg-transparent": variant === "SECONDARY" },
+    {
+      "bg-transparent text-lunar-white":
+        variant === "SECONDARY" && color === "LIGHT",
+    },
     className,
   );
 
@@ -61,11 +64,11 @@ export default function LinkButton({
 
   return !isButton ? (
     <a className={classes} href={href}>
-      {ChildrenAndIcon}
+      {Icon ? ChildrenAndIcon : children}
     </a>
   ) : (
     <button type={type} onClick={(event) => onClick(event)} className={classes}>
-      {ChildrenAndIcon}
+      {Icon ? ChildrenAndIcon : children}
     </button>
   );
 }

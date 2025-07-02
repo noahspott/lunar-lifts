@@ -14,6 +14,9 @@
   --color-lunar-accent: #f30525;
   --color-lunar-white: #ffffff;
   --color-lunar-white-2: #e9e9e9;
+  --color-text-dark-1: #000;
+  --color-text-dark-2: #1a1a1a;
+  --color-text-dark-3: #434343;
 }
 
 :focus {

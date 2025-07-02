@@ -29,9 +29,19 @@ export default function ContactSection() {
               Got questions? Ready to book? We're here to help! Reach out and
               let's get your party started.
             </p>
-            <div className="flex gap-4">
-              <ContactItem label="Phone" contactInfo={PHONE} type="PHONE" />
-              <ContactItem label="Email" contactInfo={EMAIL} type="EMAIL" />
+            <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
+              <ContactItem
+                theme="LIGHT"
+                label="Phone"
+                contactInfo={PHONE}
+                type="PHONE"
+              />
+              <ContactItem
+                theme="LIGHT"
+                label="Email"
+                contactInfo={EMAIL}
+                type="EMAIL"
+              />
             </div>
           </div>
           <div className="max-w-xl flex-1">
