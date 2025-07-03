@@ -4,6 +4,8 @@
 @import "./color-components.css";
 
 @theme {
+  --breakpoint-xs: 28rem;
+
   --font-heading: "Montserrat", "sans-serif";
   --font-body: "hind", "sans-serif";
 

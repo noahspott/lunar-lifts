@@ -4,6 +4,9 @@ import { Image } from "astro:assets";
 import Content from "./Content";
 import ContactItem from "./ContactItem";
 
+// Images
+import logo from "@/assets/images/lunar-lifts-logo.png";
+
 // Data
 import { links } from "@/data/links";
 import { PHONE, EMAIL } from "@/data/business";
@@ -13,7 +16,8 @@ import { PHONE, EMAIL } from "@/data/business";
   <Content className="grid grid-rows-3">
     <div class="flex flex-col justify-between gap-8 md:flex-row">
       <div class="flex max-w-[500px] flex-col gap-8">
-        <div class="bg-lunar-white size-[150px] rounded-full"></div>
+        <Image src={logo} alt="Lunar Lifts Logo" class="w-52" />
+
         <p class="text-body-copy">
           <span class="font-2">Lunar Lifts</span> is the Four Corners' modern bounce
           house rental company—clean gear, on-time service, no stress. We make parties

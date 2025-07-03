@@ -8,13 +8,13 @@
 
 @layer components {
   .heading-page {
-    @apply font-heading text-[64px] leading-tight;
+    @apply font-heading text-4xl leading-tight md:text-5xl lg:text-[64px];
   }
   .heading-section {
-    @apply font-heading text-5xl;
+    @apply font-heading text-4xl md:text-5xl;
   }
   .heading-subsection {
-    @apply font-heading text-[32px];
+    @apply font-heading text-2xl xl:text-[32px];
   }
   .heading-card {
     @apply font-heading text-[24px] sm:text-[28px] lg:text-[32px];
@@ -24,7 +24,7 @@
   }
 
   .subtitle {
-    @apply font-body text-[18px] leading-[150%] sm:text-[22px];
+    @apply font-body text-xl leading-[150%] sm:text-[22px];
   }
 
   .body-copy {
