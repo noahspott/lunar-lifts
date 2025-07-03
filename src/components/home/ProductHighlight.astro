@@ -1,31 +1,54 @@
 ---
+// Components
 import { Content, LinkButton } from "@/components/shared";
+import { BigProductCard } from "@/components/home";
 
-const products = [
+// Images
+import bounceHouse from "@/assets/images/products/bounce-house-1.jpg";
+
+// Types
+import type { ImageMetadata } from "astro";
+export type Product = {
+  name: string;
+  description: string;
+  color: string;
+  href: string;
+  src: ImageMetadata;
+  alt: string;
+};
+
+// Data
+const products: Product[] = [
   {
     name: "Castle Bounce House",
     description: "18' Bounce House",
     color: "#D2024A",
-    href: "/service",
+    href: "/services",
+    src: bounceHouse,
+    alt: "Wow big bouncehouse!",
   },
   {
     name: "Waterslide",
     description: "18' Waterslide",
     color: "#0182A7",
-    href: "/service",
+    href: "/services",
+    src: bounceHouse,
+    alt: "Wow big bouncehouse!",
   },
   {
     name: "Castle Bounce House",
     description: "18' Bounce House",
     color: "#C1A800",
-    href: "/service",
+    href: "/services",
+    src: bounceHouse,
+    alt: "Wow big bouncehouse!",
   },
 ];
 ---
 
 <section class="section bg-gradient-dark">
   <Content>
-    <div class="text-lunar-white flex flex-col gap-4">
+    <div class="text-lunar-white mb-24 flex flex-col gap-4">
       <h2 class="heading-section font-2">
         The best inflatables. <span class="underline underline-offset-[25%]"
           >Zero Hassle</span
@@ -40,6 +63,21 @@ const products = [
         className="mt-4 self-start">View All Services</LinkButton
       >
     </div>
-    <div></div>
+    <ul class="flex flex-col gap-16">
+      {
+        products.map((product, index) => (
+          <li
+            class:list={[
+              "flex w-full pt-16",
+              { "sm:-rotate-3 sm:px-3": index === 0 },
+              { "sm:rotate-3 sm:px-4": index === 2 },
+              { "justify-end": index % 2 !== 0 },
+            ]}
+          >
+            <BigProductCard product={product} />
+          </li>
+        ))
+      }
+    </ul>
   </Content>
 </section>

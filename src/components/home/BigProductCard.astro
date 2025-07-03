@@ -1,0 +1,62 @@
+---
+// Lib
+import clsx from "clsx";
+
+// Components
+import { ChevronRight } from "lucide-react";
+import { Image } from "astro:assets";
+
+// Types
+import type { Product } from "./ProductHighlight.astro";
+
+const { product, className } = Astro.props as {
+  product: Product;
+  className: string;
+};
+---
+
+<div
+  class={clsx(
+    "sm:aspect-3/2 max-w-[768px] w-full relative text-lunar-white grid grid-rows-12",
+    className
+  )}
+  style={{
+    background: product.color,
+    boxShadow: `0px 4px 80px 0px rgb(255, 255, 255, 15%)`,
+  }}
+>
+  <Image
+    src={product.src}
+    alt={product.alt}
+    class="absolute h-full w-full object-cover"
+  />
+  <div
+    class="absolute z-10 h-full w-full object-cover"
+    style={{
+      background: `linear-gradient(to bottom, transparent 50%, ${product.color})`,
+    }}
+  >
+  </div>
+  <div
+    class={clsx(
+      "row-start-9 row-span-4 md:row-start-9 md:row-span-4 w-full z-20 flex flex-col sm:flex-row items-center justify-between p-8"
+    )}
+    style={{
+      background: product.color,
+    }}
+  >
+    <div class="self-start sm:self-center">
+      <h3 class="heading-card font-2 uppercase">{product.name}</h3>
+      <p class="subtitle">{product.description}</p>
+    </div>
+
+    <a
+      href={product.href}
+      aria-label="Go to services page"
+      class="self-end sm:self-center"
+    >
+      <!-- <ChevronRight className="size-12" /> -->
+      <ChevronRight className="size-12" />
+    </a>
+  </div>
+</div>
