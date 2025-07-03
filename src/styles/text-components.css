@@ -17,14 +17,14 @@
     @apply font-heading text-[32px];
   }
   .heading-card {
-    @apply font-heading text-[32px];
+    @apply font-heading text-[24px] sm:text-[28px] lg:text-[32px];
   }
   .heading-kicker {
     @apply font-heading text-2xl;
   }
 
   .subtitle {
-    @apply font-body text-[22px] leading-[150%];
+    @apply font-body text-[18px] leading-[150%] sm:text-[22px];
   }
 
   .body-copy {
