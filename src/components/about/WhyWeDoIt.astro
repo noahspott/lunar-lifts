@@ -1,5 +1,36 @@
 ---
+// Components
 import { Content } from "@/components/shared";
+import AboutCard, { type AboutCardType } from "./AboutCard.astro";
+
+// Images
+import image1 from "@/assets/images/about/party-planning.jpg";
+import image2 from "@/assets/images/about/clean.jpg";
+import image3 from "@/assets/images/about/bringing-people-together.jpg";
+
+const whyCards: AboutCardType[] = [
+  {
+    heading: "Because party planning shouldn’t be a headache",
+    body: "Too many bounce house rentals feel like a gamble—late deliveries, sketchy inflatables, zero communication. Not with us. We’re professional, punctual, and actually answer our phones.",
+    buttonLabel: "Book With Confidence",
+    src: image1,
+    href: "/contact",
+  },
+  {
+    heading: "Because clean, safe, & modern should be the standard",
+    body: "No old, worn-out bounce houses here. Every inflatable we rent is fresh, sanitized, and inspected before every event. You’re getting the best, period.",
+    buttonLabel: "See Our Rentals",
+    src: image2,
+    href: "/services",
+  },
+  {
+    heading: "Because we love bringing people together",
+    body: "From backyard birthdays to community block parties, we love helping people celebrate without stress. You handle the guest list—we’ll handle the fun.",
+    buttonLabel: "Let's Get Started",
+    src: image3,
+    href: "/contact",
+  },
+];
 ---
 
 <section class="section bg-gradient-dark">
@@ -12,5 +43,14 @@ import { Content } from "@/components/shared";
         Mexico—delivered on time and set up for you.
       </p>
     </div>
+    <ul>
+      {
+        whyCards.map((card, index) => (
+          <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+            <AboutCard {...card} />
+          </li>
+        ))
+      }
+    </ul>
   </Content>
 </section>

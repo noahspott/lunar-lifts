@@ -1,0 +1,30 @@
+---
+// Components
+import { Image } from "astro:assets";
+import { LinkButton } from "../shared";
+
+// Types
+import type { ImageMetadata } from "astro";
+export type AboutCardType = {
+  heading: string;
+  body: string;
+  buttonLabel: string;
+  src: ImageMetadata;
+  href: string;
+};
+
+const { heading, body, buttonLabel, src, href } = Astro.props as AboutCardType;
+---
+
+<div class="flex flex-col items-stretch gap-8 md:flex-row">
+  <div
+    class="order-last flex flex-1 flex-col gap-8 p-8 sm:p-12 md:order-first md:p-16"
+  >
+    <h3 class="heading-subsection font-2 text-lunar-primary">{heading}</h3>
+    <p class="body-copy">{body}</p>
+    <LinkButton className="self-start" href={href}>{buttonLabel}</LinkButton>
+  </div>
+  <div class="bg-lunar-primary flex-1">
+    <Image src={src} alt="" class="h-full object-cover" />
+  </div>
+</div>

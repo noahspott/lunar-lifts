@@ -1,15 +1,31 @@
 ---
+// Components
 import { Content } from "@/components/shared";
+import AboutCard, { type AboutCardType } from "./AboutCard.astro";
+
+// Images
+import aboutImage from "@/assets/images/about/about-lunar-lifts.jpg";
+
+const cardInfo: AboutCardType = {
+  heading: "Party pros with a purpose.",
+  body: "Lunar Lifts is a bounce house rental company serving the Four Corners. We keep it simple: clean units, on-time delivery, no hassle. From backyard birthdays to school events, we show up ready—so your party goes off without a hitch. We’re raising the bar for bounce house rentals in the Four Corners.",
+  src: aboutImage,
+  buttonLabel: "Get In Touch",
+  href: "/contact",
+};
 ---
 
 <section class="section bg-gradient-light">
   <Content>
-    <div class="flex flex-col gap-8">
+    <div class="mb-24 flex flex-col gap-8">
       <h2 class="heading-section font-2 text-lunar-primary">Who We Are</h2>
       <p class="subtitle max-w-3xl">
         We're not just another bounce house rental company—we're the team that
         shows up, cleans up, and actually gives a bounce about your party.
       </p>
+    </div>
+    <div class="shadow-2xl">
+      <AboutCard {...cardInfo} />
     </div>
   </Content>
 </section>
