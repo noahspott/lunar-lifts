@@ -1,15 +1,102 @@
 ---
+// Components
 import { Content } from "@/components/shared";
+import ServiceCard from "./ServiceCard.astro";
+
+// Types
+import type { ServiceType } from "./ServiceCard.astro";
+
+// Images
+import castleBounceHouse from "@/assets/images/products/bounce-house-1.jpg";
+import waterslide from "@/assets/images/products/bounce-house-1.jpg";
+import combo from "@/assets/images/products/bounce-house-1.jpg";
+import generator from "@/assets/images/products/bounce-house-1.jpg";
+
+const services: ServiceType[] = [
+  {
+    heading: "🏰 Castle Bounce House",
+    body: [
+      "The classic. But cleaner. And cooler.",
+      "Our modern bounce houses aren't the crusty ones you remember from your cousin's party in 2009. These are spotless, safe, and way more fun.",
+      "Perfect for: Birthday parties, block parties, or just burning kid energy.",
+    ],
+    specs: [
+      "13 ft x 13 ft",
+      "Ages 3 and up",
+      "Up to 6 kids at once",
+      "Requires 1 standard outlet",
+    ],
+    src: castleBounceHouse,
+    alt: "",
+  },
+  {
+    heading: "🌊 Waterslide",
+    body: [
+      "Hot day? Say less.",
+      "Bring the splash zone to your front yard. Our waterslides are huge, freshly cleaned, and the ultimate way to level up your summer event in New Mexico.",
+      "Perfect for: Backyard BBQs, summer birthdays, epic family days.",
+    ],
+    specs: [
+      "18 ft tall",
+      "Ages 5 and up",
+      "Connects to standard garden hose",
+      "Requires 1 standard outlet",
+    ],
+    src: waterslide,
+    alt: "",
+  },
+  {
+    heading: "🎯 Combo",
+    body: [
+      "Bounce + Slide = Best. Day. Ever.",
+      "Can't decide? You don't have to. Our combo units give you the best of both worlds—nonstop bouncing and sliding. No kid left bored.",
+      "Perfect for: Bigger parties, kids with big energy, parents who want a break.",
+    ],
+    specs: [
+      "15 ft x 20 ft",
+      "Bounce area + attached slide",
+      "Ages 4 and up",
+      "Requires 1 standard outlet",
+    ],
+    src: combo,
+    alt: "",
+  },
+  {
+    heading: "🔌 Generator (Add-On)",
+    body: [
+      "No outlet? No problem.",
+      "If your party's off the grid, we'll keep the fun going. Rent one of our quiet, reliable generators to power your bounce house anywhere.",
+      "Perfect for: Parks, fields, and party spots with no plug in sight.",
+    ],
+    specs: [
+      "3500 watts",
+      "Runs for 6-8 hours",
+      "Gas-powered",
+      "Ideal for parks or large outdoor events",
+    ],
+    src: generator,
+    alt: "",
+  },
+];
 ---
 
 <section class="section bg-lunar-white">
   <Content>
-    <div class="flex flex-col gap-8">
+    <div class="mb-32 flex flex-col gap-8">
       <h2 class="heading-section font-2 text-lunar-primary">What we offer</h2>
       <p class="subtitle max-w-3xl">
         Everything you need to turn your backyard into the best party on the
         block. All clean. All fun. All handled by us.
       </p>
     </div>
+    <ul class="flex flex-col gap-48">
+      {
+        services.map((service, index) => (
+          <li>
+            <ServiceCard imageLeft={index % 2 !== 0} {...service} />
+          </li>
+        ))
+      }
+    </ul>
   </Content>
 </section>
