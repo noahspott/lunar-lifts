@@ -91,11 +91,23 @@ const services: ServiceType[] = [
     </div>
     <ul class="flex flex-col gap-48">
       {
-        services.map((service, index) => (
-          <li>
-            <ServiceCard imageLeft={index % 2 !== 0} {...service} />
-          </li>
-        ))
+        services.map((service, index) => {
+          const isOdd = index % 2 !== 0;
+          const isTilted = !isOdd;
+          const isTiltedPos = isTilted && (index / 2) % 2 === 1;
+          const isTiltedNeg = isTilted && !isTiltedPos;
+
+          return (
+            <li>
+              <ServiceCard
+                isImageLeft={isOdd}
+                isTiltedPos={isTiltedPos}
+                isTiltedNeg={isTiltedNeg}
+                {...service}
+              />
+            </li>
+          );
+        })
       }
     </ul>
   </Content>

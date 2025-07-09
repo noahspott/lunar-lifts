@@ -9,7 +9,7 @@ export default function MenuModal() {
     <section className="bg-gradient-dark absolute inset-0 flex h-screen w-screen items-center justify-center">
       <div className="relative h-full w-full">
         <X className="text-lunar-white absolute top-9 right-4" />
-        <nav className="mt-48 flex flex-col gap-4">
+        <nav className="mt-48 flex flex-col gap-8">
           {links.map((link) => {
             return (
               <li className="list-none">

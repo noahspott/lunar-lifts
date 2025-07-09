@@ -1,5 +1,52 @@
 ---
+// Components
 import { Content } from "@/components/shared";
+import AboutCard, {
+  type AboutCardType,
+} from "@/components/shared/AboutCard.astro";
+import type { StepCardType } from "./StepCard.astro";
+import StepCard from "./StepCard.astro";
+
+// Images
+import image1 from "@/assets/images/about/party-planning.jpg";
+import image2 from "@/assets/images/about/clean.jpg";
+import image3 from "@/assets/images/about/bringing-people-together.jpg";
+import image4 from "@/assets/images/about/bringing-people-together.jpg";
+
+const steps: StepCardType[] = [
+  {
+    heading: "Reach out & book",
+    body: [
+      "Pick your bounce. Hit us up. Done.",
+      "Use our quick form, shoot us an email, or give us a call— whatever’s easiest for you. We’ll confirm your date, help you choose the right setup, and lock it in.",
+    ],
+    src: image1,
+  },
+  {
+    heading: "We deliver & set up",
+    body: [
+      "We show up. We handle it. You chill.",
+      "We bring your inflatable to you, set it up safely and professionally, and make sure everything’s good to go before your guests arrive. No stress, no nonsense.",
+    ],
+    src: image2,
+  },
+  {
+    heading: "You have a great party",
+    body: [
+      "You laugh. You celebrate. You win.",
+      "The kids bounce, the adults hang out, and you finally get to enjoy the party without worrying about a thing.",
+    ],
+    src: image3,
+  },
+  {
+    heading: "We come pack it up",
+    body: [
+      "We come back. We pack it up. You don’t lift a finger.",
+      "When the party’s over, we’ll tear it down, clean it up, and leave your space exactly how we found it.",
+    ],
+    src: image4,
+  },
+];
 ---
 
 <section class="section bg-gradient-dark">
@@ -11,5 +58,14 @@ import { Content } from "@/components/shared";
         the party. Here's how we keep it simple:
       </p>
     </div>
+    <ul>
+      {
+        steps.map((card, index) => (
+          <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+            <StepCard stepNumber={index + 1} {...card} />
+          </li>
+        ))
+      }
+    </ul>
   </Content>
 </section>

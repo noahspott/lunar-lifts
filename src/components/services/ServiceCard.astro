@@ -11,7 +11,9 @@ export type ServiceType = {
   specs: string[];
   src: ImageMetadata;
   alt: string;
-  imageLeft?: boolean;
+  isImageLeft?: boolean;
+  isTiltedPos?: boolean;
+  isTiltedNeg?: boolean;
 };
 
 const {
@@ -20,7 +22,9 @@ const {
   specs,
   src,
   alt,
-  imageLeft = false,
+  isImageLeft = false,
+  isTiltedPos = false,
+  isTiltedNeg = false,
 } = Astro.props as ServiceType;
 ---
 
@@ -39,10 +43,18 @@ const {
   <div
     class:list={[
       "order-first flex-4",
-      { "md:order-first": imageLeft },
-      { "md:order-last": !imageLeft },
+      { "md:order-first": isImageLeft },
+      { "md:order-last": !isImageLeft },
     ]}
   >
-    <Image src={src} alt={alt} />
+    <Image
+      src={src}
+      alt={alt}
+      class:list={[
+        "shadow-2xl",
+        { "md:rotate-5": isTiltedPos },
+        { "md:-rotate-5": isTiltedNeg },
+      ]}
+    />
   </div>
 </div>

@@ -1,10 +1,71 @@
 ---
+// Components
 import { Content } from "@/components/shared";
+import ServiceCard from "./ServiceCard.astro";
+
+// Types
+import type { ServiceType } from "./ServiceCard.astro";
+
+// Images
+import table from "@/assets/images/products/bounce-house-1.jpg";
+import chairs from "@/assets/images/products/bounce-house-1.jpg";
+import combo from "@/assets/images/products/bounce-house-1.jpg";
+
+const services: ServiceType[] = [
+  {
+    heading: "Party Table - 6'",
+    body: [
+      "Simple. Sturdy. Gets the job done.",
+      "Perfect for: Food tables, presents, arts & crafts, card games",
+      "Perfect for: Birthday parties, block parties, or just burning kid energy.",
+    ],
+    specs: [
+      "Seats 6-8 comfortably",
+      "6-foot folding design",
+      "Lightweight & durable plastic",
+      "Wipes clean in seconds",
+    ],
+    src: table,
+    alt: "",
+  },
+  {
+    heading: "Party Chairs - per chair",
+    body: [
+      "No frills. Just clean, comfy seats.",
+      "Stackable, simple, and never crusty. These are the chairs you want your guests sitting on—whether they're eating cake or catching their breath.",
+      "Perfect for: Seating parents, extra guests, mealtime, cake time.",
+    ],
+    specs: [
+      "Standard folding chairs",
+      "Lightweight & stackable",
+      "Neutral color to match any setup",
+      "Always wiped down and inspected before every event",
+    ],
+    src: chairs,
+    alt: "",
+  },
+  {
+    heading: "Party Table & 8 Chairs - Combo Pack",
+    body: [
+      "The all-in-one party upgrade.",
+      "Don't stress about mixing and matching—we've bundled it for you. One table, eight chairs. Boom. Done.",
+      "Perfect for: Guest seating, food & dessert stations, designated “cool parent” zones.",
+    ],
+    specs: [
+      "One 6' table",
+      "Eight matching chairs",
+      "Ideal for 6-8 people",
+      "Delivered and placed exactly where you want it",
+    ],
+    src: combo,
+    alt: "",
+  },
+];
 ---
 
 <section class="section bg-gradient-light">
   <Content>
-    <div class="flex flex-col gap-8">
+    <div class="mb-32 flex flex-col gap-8">
       <h2 class="heading-section font-2 text-lunar-primary">
         Need a place to chill?
       </h2>
@@ -13,5 +74,26 @@ import { Content } from "@/components/shared";
         only half the party.
       </p>
     </div>
+    <ul class="flex flex-col gap-48">
+      {
+        services.map((service, index) => {
+          const isOdd = index % 2 !== 0;
+          const isTilted = !isOdd;
+          const isTiltedPos = isTilted && (index / 2) % 2 === 1;
+          const isTiltedNeg = isTilted && !isTiltedPos;
+
+          return (
+            <li>
+              <ServiceCard
+                isImageLeft={isOdd}
+                isTiltedPos={isTiltedPos}
+                isTiltedNeg={isTiltedNeg}
+                {...service}
+              />
+            </li>
+          );
+        })
+      }
+    </ul>
   </Content>
 </section>
