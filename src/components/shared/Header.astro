@@ -6,10 +6,12 @@ import { PhoneCall } from "lucide-react";
 // Data
 import { links } from "@/data/links";
 import { PHONE } from "@/data/business";
+
+const { className } = Astro.props as { className: string };
 ---
 
 <header
-  class="bg-gradient-dark relative z-50 flex h-24 w-full items-center text-white select-none"
+  class={`bg-gradient-dark relative flex h-24 w-full items-center text-white select-none ${className}`}
 >
   <Content>
     <div class="flex w-full justify-between">

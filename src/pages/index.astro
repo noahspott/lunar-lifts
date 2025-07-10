@@ -8,12 +8,15 @@ import {
   FeaturedFaqs,
 } from "@/components/home";
 import { ContactSection } from "@/components/shared";
+
+// Data
+import { seo } from "@/data/seo";
 ---
 
-<Layout>
-  <Hero />
+<Layout seo={seo.home}>
+  <Hero className="relative z-20" />
   <ProductHighlight />
-  <WhyChooseUs />
+  <WhyChooseUs className="relative z-20" />
   <FeaturedFaqs />
-  <ContactSection client:load />
+  <ContactSection className="relative z-20" client:load />
 </Layout>

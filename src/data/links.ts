@@ -8,15 +8,15 @@ export const links = [
     display: "about",
   },
   {
-    href: "/faqs",
-    display: "faqs",
-  },
-  {
     href: "/services",
     display: "services",
   },
   {
     href: "/contact",
     display: "contact",
+  },
+  {
+    href: "/faqs",
+    display: "faqs",
   },
 ];

@@ -3,9 +3,12 @@
 import Layout from "../layouts/Layout.astro";
 import { SubpageHeader, ContactSection } from "@/components/shared";
 import { WhoWeAre, WhyWeDoIt } from "@/components/about";
+
+// Data
+import { seo } from "@/data/seo";
 ---
 
-<Layout>
+<Layout seo={seo.about}>
   <SubpageHeader>About Lunar Lifts</SubpageHeader>
   <WhoWeAre />
   <WhyWeDoIt />

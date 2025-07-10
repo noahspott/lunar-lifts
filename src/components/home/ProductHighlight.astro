@@ -2,6 +2,7 @@
 // Components
 import { Content, LinkButton } from "@/components/shared";
 import { BigProductCard } from "@/components/home";
+import { ShapeDivider, Stars } from "@/components/decorative";
 
 // Images
 import bounceHouse from "@/assets/images/products/bounce-house-1.jpg";
@@ -46,38 +47,42 @@ const products: Product[] = [
 ];
 ---
 
-<section class="section bg-gradient-dark">
+<section class="section bg-gradient-dark relative">
+  <ShapeDivider className="z-20" />
+  <Stars className="fixed top-0 h-dvh object-cover" />
   <Content>
-    <div class="text-lunar-white mb-24 flex flex-col gap-4">
-      <h2 class="heading-section font-2">
-        The best inflatables. <span class="underline underline-offset-[25%]"
-          >Zero Hassle</span
-        >.
-      </h2>
-      <p class="subtitle max-w-3xl">Clean, modern, and ready for fun.</p>
-      <LinkButton
-        size="MD"
-        href="/services"
-        color="LIGHT"
-        variant="SECONDARY"
-        className="mt-4 self-start">View All Services</LinkButton
-      >
+    <div class="relative">
+      <div class="text-lunar-white mb-16 flex flex-col gap-4 sm:mt-16">
+        <h2 class="heading-section font-2">
+          The best inflatables. <span class="underline underline-offset-[25%]"
+            >Zero Hassle</span
+          >.
+        </h2>
+        <p class="subtitle max-w-3xl">Clean, modern, and ready for fun.</p>
+        <LinkButton
+          size="MD"
+          href="/services"
+          color="LIGHT"
+          variant="SECONDARY"
+          className="mt-4 self-start">View All Services</LinkButton
+        >
+      </div>
+      <ul class="flex flex-col gap-16">
+        {
+          products.map((product, index) => (
+            <li
+              class:list={[
+                "flex w-full pt-16",
+                { "sm:-rotate-3 sm:px-3": index === 0 },
+                { "sm:rotate-3 sm:px-4": index === 2 },
+                { "justify-end": index % 2 !== 0 },
+              ]}
+            >
+              <BigProductCard product={product} />
+            </li>
+          ))
+        }
+      </ul>
     </div>
-    <ul class="flex flex-col gap-16">
-      {
-        products.map((product, index) => (
-          <li
-            class:list={[
-              "flex w-full pt-16",
-              { "sm:-rotate-3 sm:px-3": index === 0 },
-              { "sm:rotate-3 sm:px-4": index === 2 },
-              { "justify-end": index % 2 !== 0 },
-            ]}
-          >
-            <BigProductCard product={product} />
-          </li>
-        ))
-      }
-    </ul>
   </Content>
 </section>

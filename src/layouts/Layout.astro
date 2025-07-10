@@ -1,9 +1,15 @@
 ---
 // Components
 import { Header, Footer } from "@/components/shared";
+import { Seo, FontPreloader, Favicon } from "@/components/common";
 
 // Styles
 import "@/styles/global.css";
+
+// Types
+import type { SeoMeta } from "@/data/seo";
+
+const { seo } = Astro.props as { seo: SeoMeta };
 ---
 
 <!doctype html>
@@ -11,12 +17,14 @@ import "@/styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Lunar Lifts</title>
+
+    <Favicon />
+    <FontPreloader />
+    <Seo {...seo} />
   </head>
   <body class="bg-black">
-    <Header />
+    <Header className="z-50" />
     <slot />
     <Footer />
   </body>

@@ -18,9 +18,11 @@ const benefits = [
     text: ["Stress-free", "booking & support."],
   },
 ];
+
+const { className } = Astro.props as { className: string };
 ---
 
-<section class="section bg-gradient-light">
+<section class={`section bg-gradient-light ${className}`}>
   <Content>
     <div class="mb-24 flex flex-col items-center gap-8 text-center">
       <h2 class="heading-section font-2 text-lunar-primary">

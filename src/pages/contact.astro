@@ -2,9 +2,12 @@
 // Components
 import Layout from "../layouts/Layout.astro";
 import { SubpageHeader, ContactSection } from "@/components/shared";
+
+// Data
+import { seo } from "@/data/seo";
 ---
 
-<Layout>
+<Layout seo={seo.contact}>
   <SubpageHeader>Contact</SubpageHeader>
   <ContactSection client:load />
 </Layout>
