@@ -7,9 +7,12 @@ import {
   SecondaryProducts,
   HowItWorks,
 } from "@/components/services";
+
+// Data
+import { seo } from "@/data/seo";
 ---
 
-<Layout>
+<Layout seo={seo.services}>
   <SubpageHeader>Services</SubpageHeader>
   <MainProducts />
   <SecondaryProducts />
