@@ -24,7 +24,7 @@ const { seo } = Astro.props as { seo: SeoMeta };
     <Seo {...seo} />
   </head>
   <body class="bg-black">
-    <Header />
+    <Header className="z-50" />
     <slot />
     <Footer />
   </body>

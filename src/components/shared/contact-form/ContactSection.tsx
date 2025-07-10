@@ -12,10 +12,10 @@ import { useState } from "react";
 import type { FormState } from "@/components/shared/contact-form/types";
 import { EMAIL, PHONE } from "@/data/business";
 
-export default function ContactSection() {
+export default function ContactSection({ className }: { className: string }) {
   const [loadingState, setLoadingState] = useState<FormState>("idle");
   return (
-    <section className="section bg-lunar-white">
+    <section className={`section bg-lunar-white ${className}`}>
       <Content>
         <div className="flex flex-col gap-24 lg:flex-row">
           <div className="flex max-w-xl flex-1 flex-col gap-8">
