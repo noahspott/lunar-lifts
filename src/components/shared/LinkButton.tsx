@@ -30,28 +30,30 @@ export default function LinkButton({
   >;
   children: React.ReactNode;
 }) {
+  const baseStyles =
+    "font-heading font-1 border-2 drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase";
+
+  const sizeStyles = {
+    SM: "py-3 px-4 text-base",
+    MD: "py-4 px-8 text-lg",
+  };
+
+  const colorStyles = {
+    LIGHT: "bg-lunar-white border-lunar-white text-black",
+    DARK: "text-lunar-white border-black bg-black",
+    ACCENT: "text-lunar-white border-lunar-accent bg-lunar-accent",
+  };
+
+  const secondaryOverride =
+    variant === "SECONDARY" && color === "LIGHT"
+      ? "bg-transparent text-lunar-white"
+      : "";
+
   const classes = clsx(
-    "font-heading font-1 border drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase",
-    {
-      "py-3 px-4 text-base": size === "SM",
-    },
-    {
-      "py-4 px-8 text-lg": size === "MD",
-    },
-    {
-      "bg-lunar-white border-lunar-white text-black": color === "LIGHT",
-    },
-    {
-      "text-lunar-white border-black bg-black": color === "DARK",
-    },
-    {
-      "text-lunar-white border-lunar-accent bg-lunar-accent":
-        color === "ACCENT",
-    },
-    {
-      "bg-transparent text-lunar-white":
-        variant === "SECONDARY" && color === "LIGHT",
-    },
+    baseStyles,
+    size && sizeStyles[size],
+    color && colorStyles[color],
+    secondaryOverride,
     className,
   );
 
@@ -63,7 +65,7 @@ export default function LinkButton({
   );
 
   return !isButton ? (
-    <a className={classes} href={href}>
+    <a className={`${classes}`} href={href}>
       {Icon ? ChildrenAndIcon : children}
     </a>
   ) : (
