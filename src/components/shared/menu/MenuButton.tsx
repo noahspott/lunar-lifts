@@ -1,4 +1,5 @@
 // Lib
+import { useScrollLock } from "./useScrollLock";
 import { motion } from "motion/react";
 import { useState } from "react";
 import clsx from "clsx";
@@ -9,6 +10,7 @@ import MenuModal from "./MenuModal";
 
 export default function MenuButton({ className = "" }: { className?: string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  useScrollLock(isOpen);
 
   return (
     <motion.button
