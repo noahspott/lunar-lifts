@@ -1,13 +1,14 @@
 ---
 // Components
 import { Header, Footer } from "@/components/shared";
-import { Seo, FontPreloader, Favicon } from "@/components/common";
+import { Seo, FontPreloader, Favicon, ThemeMeta } from "@/components/common";
 
 // Styles
 import "@/styles/global.css";
 
 // Types
 import type { SeoMeta } from "@/data/seo";
+import { Stars } from "@/components/decorative";
 
 const { seo } = Astro.props as { seo: SeoMeta };
 ---
@@ -15,16 +16,18 @@ const { seo } = Astro.props as { seo: SeoMeta };
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8" />
 
-    <Favicon />
+    <ThemeMeta color="black" />
     <FontPreloader />
     <Seo {...seo} />
+    <Favicon />
   </head>
   <body class="bg-black">
-    <Header className="z-50" />
+    <Header className="" />
+    <Stars className="fixed top-0 h-dvh object-cover" />
     <slot />
     <Footer />
   </body>

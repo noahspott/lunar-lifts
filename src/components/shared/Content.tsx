@@ -5,5 +5,9 @@ export default function Content({
   children?: React.ReactNode;
   className?: string;
 }) {
-  return <div className="mx-auto w-full max-w-6xl px-4">{children}</div>;
+  return (
+    <div className="relative z-50 mx-auto w-full max-w-7xl px-4">
+      {children}
+    </div>
+  );
 }
