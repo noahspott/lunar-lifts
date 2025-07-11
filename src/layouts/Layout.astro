@@ -26,8 +26,12 @@ const { seo } = Astro.props as { seo: SeoMeta };
     <Favicon />
   </head>
   <body class="bg-black">
+    <div
+      class="bg-gradient-dark fixed top-0 left-0 -z-10 h-dvh w-full object-cover"
+    >
+    </div>
+    <Stars className="fixed top-0 z-0 h-dvh object-cover" />
     <Header className="" />
-    <Stars className="fixed top-0 h-dvh object-cover" />
     <slot />
     <Footer />
   </body>

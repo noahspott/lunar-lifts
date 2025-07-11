@@ -11,9 +11,9 @@ const { className } = Astro.props as { className: string };
 ---
 
 <header
-  class={`bg-gradient-dark relative flex h-24 w-full items-center text-white select-none ${className}`}
+  class={`relative flex h-24 w-full items-center text-white select-none ${className}`}
 >
-  <Content>
+  <Content className="z-10">
     <div class="flex w-full justify-between">
       <nav class="flex items-center gap-[60px]">
         <a href="/" class="font-heading font-2 text-[22px]">

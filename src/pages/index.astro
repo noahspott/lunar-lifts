@@ -14,9 +14,9 @@ import { seo } from "@/data/seo";
 ---
 
 <Layout seo={seo.home}>
-  <Hero className="relative z-20" />
+  <Hero />
   <ProductHighlight />
-  <WhyChooseUs className="relative z-20" />
+  <WhyChooseUs />
   <FeaturedFaqs />
-  <ContactSection className="relative z-20" client:load />
+  <ContactSection client:load />
 </Layout>
