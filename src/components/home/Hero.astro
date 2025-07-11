@@ -1,30 +1,52 @@
 ---
 // Components
 import { Content, LinkButton } from "@/components/shared";
+import { Image } from "astro:assets";
+
+// Images
+import logo from "@/assets/images/lunar-lifts-logo.png";
+import planet from "@/assets/images/decorative/planet.svg";
+import { NotebookPen } from "lucide-react";
 
 const { className } = Astro.props as { className: string };
 ---
 
-<section
-  class={`bg-lunar-white py-auto relative h-[60vh] min-h-[500px] pt-[12vh] ${className}`}
->
+<section class={`bg-lunar-white py-24 md:py-32 ${className} relative`}>
+  <Image
+    src={planet}
+    alt=""
+    class="absolute -top-50 -left-175 opacity-5"
+    style={{
+      background: "none",
+    }}
+  />
   <Content>
-    <div class="flex flex-col gap-8">
-      <h1 class="heading-page">
-        The Galaxy's <span class="italic">Best</span><br
-          class="xs:block hidden"
-        />
-        <span class="font-2 text-lunar-primary">Bounce House Rentals</span>
-      </h1>
-      <p class="subtitle">
-        Modern equipment. Friendly crew. Stress-free setup. <br
-          class="hidden sm:block"
-        />
-        It's not rocket science—we just do it better
-      </p>
-      <LinkButton size="MD" className="self-start" href="/contact"
-        >Let's Bounce</LinkButton
-      >
+    <div class="relative">
+      <div class="flex flex-3 flex-col gap-8 justify-self-start">
+        <h1 class="heading-page text-shadow-lunar-white text-shadow-md">
+          The Galaxy's <span class="italic">Best</span><br
+            class="xs:block hidden"
+          />
+          <span class="font-2 text-lunar-primary drop-shadow-2xl"
+            >Bounce House Rentals</span
+          >
+        </h1>
+        <p class="subtitle text-shadow-lunar-white text-shadow-md">
+          Modern equipment. Friendly crew. Stress-free setup. <br
+            class="hidden sm:block"
+          />
+          It's not rocket science—we just do it better
+        </p>
+        <LinkButton size="MD" className="self-start" href="/contact"
+          >Let's Bounce</LinkButton
+        >
+      </div>
+
+      <Image
+        src={logo}
+        alt="Lunar Lifts Logo"
+        class="lg:drop-shadow-lunar-primary absolute top-1/2 left-1/2 -z-10 h-[320px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-10 blur-[2px] transition-all duration-500 sm:right-0 sm:left-auto sm:w-auto sm:-translate-x-0 md:h-[350px] md:opacity-60 md:blur-none lg:h-[400px] lg:opacity-100 lg:drop-shadow-md"
+      />
     </div>
   </Content>
 </section>
