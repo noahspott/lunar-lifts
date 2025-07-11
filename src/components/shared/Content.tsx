@@ -6,8 +6,6 @@ export default function Content({
   className?: string;
 }) {
   return (
-    <div className="relative z-50 mx-auto w-full max-w-7xl px-4">
-      {children}
-    </div>
+    <div className="relative mx-auto w-full max-w-7xl px-4">{children}</div>
   );
 }

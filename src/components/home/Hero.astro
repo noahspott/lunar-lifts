@@ -22,6 +22,11 @@ const { className } = Astro.props as { className: string };
   />
   <Content>
     <div class="relative">
+      <Image
+        src={logo}
+        alt="Lunar Lifts Logo"
+        class="lg:drop-shadow-lunar-primary absolute top-1/2 left-1/2 h-[320px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-10 blur-[2px] transition-all duration-500 sm:right-0 sm:left-auto sm:w-auto sm:-translate-x-0 md:h-[350px] md:opacity-60 md:blur-none lg:h-[400px] lg:opacity-100 lg:drop-shadow-md"
+      />
       <div class="flex flex-3 flex-col gap-8 justify-self-start">
         <h1 class="heading-page text-shadow-lunar-white text-shadow-md">
           The Galaxy's <span class="italic">Best</span><br
@@ -41,12 +46,6 @@ const { className } = Astro.props as { className: string };
           >Let's Bounce</LinkButton
         >
       </div>
-
-      <Image
-        src={logo}
-        alt="Lunar Lifts Logo"
-        class="lg:drop-shadow-lunar-primary absolute top-1/2 left-1/2 -z-10 h-[320px] w-auto -translate-x-1/2 -translate-y-1/2 opacity-10 blur-[2px] transition-all duration-500 sm:right-0 sm:left-auto sm:w-auto sm:-translate-x-0 md:h-[350px] md:opacity-60 md:blur-none lg:h-[400px] lg:opacity-100 lg:drop-shadow-md"
-      />
     </div>
   </Content>
 </section>

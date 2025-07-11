@@ -9,7 +9,7 @@ import { links } from "@/data/links";
 
 export default function MenuModal() {
   return (
-    <section className="bg-gradient-dark fixed inset-0 flex h-screen w-screen items-center justify-center">
+    <section className="bg-gradient-dark fixed inset-0 z-50 flex h-screen w-screen items-center justify-center">
       <div className="relative h-full w-full">
         <X className="text-lunar-white absolute top-9 right-4" />
         <nav className="me-8 mt-48 flex flex-col gap-8">
