@@ -104,6 +104,7 @@ const services: ServiceType[] = [
                 isTiltedPos={isTiltedPos}
                 isTiltedNeg={isTiltedNeg}
                 {...service}
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </li>
           );

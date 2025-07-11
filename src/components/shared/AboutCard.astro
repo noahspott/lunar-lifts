@@ -11,6 +11,7 @@ export type AboutCardType = {
   src: ImageMetadata;
   buttonLabel?: string;
   href?: string;
+  loading?: "eager" | "lazy";
 };
 
 const {
@@ -19,6 +20,7 @@ const {
   buttonLabel,
   src,
   href = "/contact",
+  loading = "lazy",
 } = Astro.props as AboutCardType;
 ---
 
@@ -37,6 +39,6 @@ const {
     }
   </div>
   <div class="bg-lunar-primary flex-1">
-    <Image src={src} alt="" class="h-full object-cover" />
+    <Image src={src} alt="" class="h-full object-cover" loading={loading} />
   </div>
 </div>

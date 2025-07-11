@@ -14,6 +14,7 @@ export type ServiceType = {
   isImageLeft?: boolean;
   isTiltedPos?: boolean;
   isTiltedNeg?: boolean;
+  loading?: "lazy" | "eager";
 };
 
 const {
@@ -25,6 +26,7 @@ const {
   isImageLeft = false,
   isTiltedPos = false,
   isTiltedNeg = false,
+  loading = "lazy",
 } = Astro.props as ServiceType;
 ---
 
@@ -55,6 +57,7 @@ const {
         { "md:rotate-5": isTiltedPos },
         { "md:-rotate-5": isTiltedNeg },
       ]}
+      loading={loading}
     />
   </div>
 </div>
