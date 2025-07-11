@@ -13,10 +13,14 @@ import { PHONE, EMAIL } from "@/data/business";
 ---
 
 <footer class="bg-gradient-dark text-lunar-white py-24">
-  <Content className="grid grid-rows-3">
+  <Content className="relative z-20 grid grid-rows-3">
     <div class="flex flex-col justify-between gap-8 md:flex-row">
       <div class="flex max-w-[500px] flex-col gap-8">
-        <Image src={logo} alt="Lunar Lifts Logo" class="w-52" />
+        <Image
+          src={logo}
+          alt="Lunar Lifts Logo"
+          class="w-52 drop-shadow-sm drop-shadow-white"
+        />
 
         <p class="text-body-copy">
           <span class="font-2">Lunar Lifts</span> is the Four Corners' modern bounce
@@ -44,7 +48,10 @@ import { PHONE, EMAIL } from "@/data/business";
           links.map((link) => {
             return (
               <li>
-                <a class="heading-card font-2 uppercase" href={link.href}>
+                <a
+                  class="heading-card font-2 link-light uppercase"
+                  href={link.href}
+                >
                   {link.display}
                 </a>
               </li>
