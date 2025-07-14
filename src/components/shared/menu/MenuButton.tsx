@@ -1,6 +1,6 @@
 // Lib
 import { useScrollLock } from "./useScrollLock";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import clsx from "clsx";
 
@@ -19,7 +19,19 @@ export default function MenuButton({ className = "" }: { className?: string }) {
         setIsOpen((prev) => !prev);
       }}
     >
-      {isOpen ? <MenuModal /> : <Menu className="text-lunar-white" />}
+      <AnimatePresence mode="wait">
+        {isOpen ? (
+          <MenuModal />
+        ) : (
+          <motion.div
+            initial={{ x: "40px", opacity: 0 }}
+            animate={{ x: "0", opacity: 1 }}
+            key="menu-button"
+          >
+            <Menu className="text-lunar-white" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.button>
   );
 }
