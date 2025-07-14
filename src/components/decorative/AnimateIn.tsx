@@ -13,7 +13,7 @@ type AnimateInProps = {
 export default function AnimateIn({
   children,
   delay = 0,
-  duration = 0.3,
+  duration = 0.2,
   y = 20,
   className = "",
   initialOpacity = 0,
@@ -23,7 +23,7 @@ export default function AnimateIn({
     ? {
         type: "spring",
         stiffness: 300,
-        damping: 20,
+        damping: 15,
         mass: 1,
         delay,
       }

@@ -1,5 +1,6 @@
 ---
 // Components
+import { AnimateOnInView } from "../decorative";
 import { Content } from "@/components/shared";
 import AboutCard, {
   type AboutCardType,
@@ -26,8 +27,10 @@ const cardInfo: AboutCardType = {
         shows up, cleans up, and actually gives a bounce about your party.
       </p>
     </div>
-    <div class="shadow-2xl">
-      <AboutCard loading="eager" {...cardInfo} />
-    </div>
+    <AnimateOnInView client:load>
+      <div class="shadow-2xl">
+        <AboutCard loading="eager" {...cardInfo} />
+      </div>
+    </AnimateOnInView>
   </Content>
 </section>

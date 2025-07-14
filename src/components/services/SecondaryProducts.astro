@@ -2,6 +2,7 @@
 // Components
 import { Content } from "@/components/shared";
 import ServiceCard from "./ServiceCard.astro";
+import { AnimateOnInView } from "../decorative";
 
 // Types
 import type { ServiceType } from "./ServiceCard.astro";
@@ -83,14 +84,16 @@ const services: ServiceType[] = [
           const isTiltedNeg = isTilted && !isTiltedPos;
 
           return (
-            <li>
-              <ServiceCard
-                isImageLeft={isOdd}
-                isTiltedPos={isTiltedPos}
-                isTiltedNeg={isTiltedNeg}
-                {...service}
-              />
-            </li>
+            <AnimateOnInView client:load>
+              <li>
+                <ServiceCard
+                  isImageLeft={isOdd}
+                  isTiltedPos={isTiltedPos}
+                  isTiltedNeg={isTiltedNeg}
+                  {...service}
+                />
+              </li>
+            </AnimateOnInView>
           );
         })
       }

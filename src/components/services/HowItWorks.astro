@@ -1,11 +1,11 @@
 ---
 // Components
 import { Content } from "@/components/shared";
-import AboutCard, {
-  type AboutCardType,
-} from "@/components/shared/AboutCard.astro";
-import type { StepCardType } from "./StepCard.astro";
 import StepCard from "./StepCard.astro";
+import { AnimateOnInView } from "../decorative";
+
+// Types
+import type { StepCardType } from "./StepCard.astro";
 
 // Images
 import image1 from "@/assets/images/about/party-planning.jpg";
@@ -61,9 +61,11 @@ const steps: StepCardType[] = [
     <ul>
       {
         steps.map((card, index) => (
-          <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
-            <StepCard stepNumber={index + 1} {...card} />
-          </li>
+          <AnimateOnInView client:load>
+            <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+              <StepCard stepNumber={index + 1} {...card} />
+            </li>
+          </AnimateOnInView>
         ))
       }
     </ul>

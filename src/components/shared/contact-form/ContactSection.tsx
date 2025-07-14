@@ -4,6 +4,7 @@ import ContactForm from "./ContactForm";
 import SuccessMessage from "./SuccessMessage";
 import ErrorMessage from "./ErrorMessage";
 import ContactItem from "../ContactItem";
+import { AnimatePresence, motion } from "motion/react";
 
 // Tools
 import { useState } from "react";
@@ -45,15 +46,52 @@ export default function ContactSection({ className }: { className?: string }) {
             </div>
           </div>
           <div className="max-w-xl flex-1">
-            {loadingState === "idle" && (
-              <ContactForm
-                loadingState={loadingState}
-                setLoadingState={setLoadingState}
-              />
-            )}
+            <AnimatePresence mode="wait">
+              {loadingState === "idle" && (
+                <motion.div
+                  key="form"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ContactForm
+                    loadingState={loadingState}
+                    setLoadingState={setLoadingState}
+                  />
+                </motion.div>
+              )}
 
-            {loadingState === "success" && <SuccessMessage />}
-            {loadingState === "error" && <ErrorMessage />}
+              {loadingState === "success" && (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.3, // Delay to allow form to finish animating out
+                  }}
+                >
+                  <SuccessMessage />
+                </motion.div>
+              )}
+
+              {loadingState === "error" && (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.3,
+                  }}
+                >
+                  <ErrorMessage />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </Content>

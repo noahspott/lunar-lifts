@@ -4,6 +4,7 @@ import { Content } from "@/components/shared";
 import AboutCard, {
   type AboutCardType,
 } from "@/components/shared/AboutCard.astro";
+import { AnimateOnInView } from "../decorative";
 
 // Images
 import image1 from "@/assets/images/about/party-planning.jpg";
@@ -48,9 +49,11 @@ const whyCards: AboutCardType[] = [
     <ul>
       {
         whyCards.map((card, index) => (
-          <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
-            <AboutCard {...card} />
-          </li>
+          <AnimateOnInView client:load>
+            <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+              <AboutCard {...card} />
+            </li>
+          </AnimateOnInView>
         ))
       }
     </ul>
