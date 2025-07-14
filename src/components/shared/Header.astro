@@ -2,6 +2,7 @@
 // Components
 import { Content, LinkButton, MenuButton } from "@/components/shared";
 import { PhoneCall } from "lucide-react";
+import { AnimatePresence } from "motion/react";
 
 // Data
 import { links } from "@/data/links";
@@ -11,7 +12,7 @@ const { className } = Astro.props as { className: string };
 ---
 
 <header
-  class={`relative flex h-24 w-full items-center text-white select-none ${className}`}
+  class={`relative flex h-24 w-full items-center text-white select-none transition-all duration-300 ${className}`}
 >
   <Content className="z-10">
     <div class="flex w-full justify-between">
@@ -19,7 +20,7 @@ const { className } = Astro.props as { className: string };
         <a href="/" class="font-heading font-2 text-[22px]">
           <h1>Lunar Lifts</h1>
         </a>
-        <ul class="hidden gap-8 md:flex lg:gap-[60px]">
+        <ul class="hidden gap-8 lg:flex lg:gap-[60px]">
           {
             links.map((link) => {
               return (
@@ -33,7 +34,7 @@ const { className } = Astro.props as { className: string };
           }
         </ul>
       </nav>
-      <div class="flex gap-10">
+      <div class="flex gap-10 transition-all duration-300">
         <LinkButton
           className="hidden sm:block sm:self-end"
           href={`tel:${PHONE}`}
@@ -44,7 +45,9 @@ const { className } = Astro.props as { className: string };
         >
           {PHONE}
         </LinkButton>
-        <MenuButton className="md:hidden" client:load />
+        <div class="flex w-[24px] items-center">
+          <MenuButton className="lg:hidden" client:load />
+        </div>
       </div>
     </div>
   </Content>

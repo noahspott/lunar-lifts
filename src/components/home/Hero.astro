@@ -35,7 +35,7 @@ const { className } = Astro.props as { className: string };
       <div
         class="absolute top-1/2 left-1/2 h-[320px] w-auto -translate-x-1/2 -translate-y-1/2 transition-all duration-500 sm:right-0 sm:left-auto sm:-translate-x-0 md:h-[350px] lg:h-[400px]"
       >
-        <AnimateIn client:load>
+        <AnimateIn delay={0.4} isBouncy client:load>
           <Image
             src={logo}
             alt="Lunar Lifts Logo"

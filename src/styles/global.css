@@ -35,7 +35,11 @@ textarea:-webkit-autofill:active {
 }
 
 :focus {
-  outline-color: var(--color-lunar-accent);
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-lunar-accent);
   outline-offset: 4px;
 }
 

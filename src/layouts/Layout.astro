@@ -2,6 +2,7 @@
 // Components
 import { Header, Footer } from "@/components/shared";
 import { Seo, FontPreloader, Favicon, ThemeMeta } from "@/components/common";
+import PageTransition from "@/components/decorative/PageTransition";
 
 // Styles
 import "@/styles/global.css";
@@ -31,9 +32,11 @@ const { seo } = Astro.props as { seo: SeoMeta };
     >
     </div>
     <Stars className="fixed top-0 z-0 h-dvh object-cover" />
-    <Header className="" />
-    <slot />
-    <Footer />
+    <PageTransition client:only>
+      <Header className="" />
+      <slot />
+      <Footer />
+    </PageTransition>
   </body>
 </html>
 

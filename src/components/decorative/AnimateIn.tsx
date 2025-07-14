@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Transition } from "framer-motion";
 
 type AnimateInProps = {
   children: React.ReactNode;
@@ -6,20 +6,39 @@ type AnimateInProps = {
   duration?: number;
   y?: number;
   className?: string;
+  initialOpacity?: number;
+  isBouncy?: boolean;
 };
 
 export default function AnimateIn({
   children,
   delay = 0,
-  duration = 0.6,
+  duration = 0.2,
   y = 20,
   className = "",
+  initialOpacity = 0,
+  isBouncy = false,
 }: AnimateInProps) {
+  const transition: Transition = isBouncy
+    ? {
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+        mass: 1,
+        delay,
+      }
+    : {
+        type: "tween",
+        ease: "easeOut",
+        duration,
+        delay,
+      };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: initialOpacity, y }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      transition={transition}
       className={className}
     >
       {children}

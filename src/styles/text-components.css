@@ -38,4 +38,8 @@
   .link-light {
     @apply text-lunar-white hover:text-lunar-accent hover:cursor-crosshair;
   }
+
+  .gradient-text-dark {
+    @apply from-lunar-primary/90 via-lunar-primary to-lunar-primary/80 bg-gradient-to-r bg-clip-text text-transparent;
+  }
 }

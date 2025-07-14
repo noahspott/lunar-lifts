@@ -2,6 +2,7 @@
 // Components
 import { Content } from "@/components/shared";
 import { Clock, Sparkles, MessageCircleHeart } from "lucide-react";
+import { AnimateOnInView } from "../decorative";
 
 // Data
 const benefits = [
@@ -37,13 +38,15 @@ const { className } = Astro.props as { className: string };
     >
       {
         benefits.map((benefit, index) => (
-          <li>
-            <benefit.Icon className="mx-auto mb-8 size-32 stroke-[0.5] text-lunar-primary" />
-            <p class="heading-subsection font-2 text-center">
-              {benefit.text[0]} <br />
-              {benefit.text[1]}
-            </p>
-          </li>
+          <AnimateOnInView client:load delay={index * 0.15}>
+            <li>
+              <benefit.Icon className="mx-auto mb-8 size-32 stroke-[0.5] text-lunar-primary" />
+              <p class="heading-subsection font-2 text-center">
+                {benefit.text[0]} <br />
+                {benefit.text[1]}
+              </p>
+            </li>
+          </AnimateOnInView>
         ))
       }
     </ul>

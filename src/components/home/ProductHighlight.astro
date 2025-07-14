@@ -2,7 +2,9 @@
 // Components
 import { Content, LinkButton } from "@/components/shared";
 import { BigProductCard } from "@/components/home";
-import { ShapeDivider, Stars } from "@/components/decorative";
+import { ShapeDivider } from "@/components/decorative";
+import { AnimateOnInView } from "@/components/decorative";
+import { motion } from "motion/react";
 
 // Images
 import bounceHouse from "@/assets/images/products/bounce-house-1.jpg";
@@ -69,16 +71,18 @@ const products: Product[] = [
       <ul class="flex flex-col gap-16">
         {
           products.map((product, index) => (
-            <li
-              class:list={[
-                "flex w-full pt-16",
-                { "sm:-rotate-3 sm:px-3": index === 0 },
-                { "sm:rotate-3 sm:px-4": index === 2 },
-                { "justify-end": index % 2 !== 0 },
-              ]}
-            >
-              <BigProductCard product={product} />
-            </li>
+            <AnimateOnInView client:load>
+              <li
+                class:list={[
+                  "flex w-full pt-16",
+                  { "sm:-rotate-3 sm:px-3": index === 0 },
+                  { "sm:rotate-3 sm:px-4": index === 2 },
+                  { "justify-end": index % 2 !== 0 },
+                ]}
+              >
+                <BigProductCard product={product} />
+              </li>
+            </AnimateOnInView>
           ))
         }
       </ul>
