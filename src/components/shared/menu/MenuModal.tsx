@@ -5,7 +5,11 @@ import { motion } from "motion/react";
 // Data
 import { links } from "@/data/links";
 
-export default function MenuModal() {
+export default function MenuModal({
+  setIsOpen,
+}: {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <motion.section
       key="menu-modal"
@@ -16,8 +20,13 @@ export default function MenuModal() {
       className="bg-gradient-dark fixed inset-0 z-50 flex h-screen w-screen items-center justify-center"
     >
       <div className="relative h-full w-full">
-        <X className="text-lunar-white absolute top-9 right-4" />
-        <nav className="me-8 mt-48 flex flex-col gap-8">
+        <button className="absolute top-9 right-4">
+          <X
+            className="text-lunar-white hover:cursor-pointer"
+            onClick={() => setIsOpen(false)}
+          />
+        </button>
+        <nav className="me-8 mt-48 flex flex-col items-center gap-8">
           {links.map((link) => {
             return (
               <li className="list-none">

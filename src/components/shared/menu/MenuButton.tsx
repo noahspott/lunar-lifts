@@ -13,25 +13,25 @@ export default function MenuButton({ className = "" }: { className?: string }) {
   useScrollLock(isOpen);
 
   return (
-    <motion.button
-      className={clsx("hover:cursor-pointer", className)}
-      onClick={() => {
-        setIsOpen((prev) => !prev);
-      }}
-    >
-      <AnimatePresence mode="wait">
-        {isOpen ? (
-          <MenuModal />
-        ) : (
-          <motion.div
-            initial={{ x: "40px", opacity: 0 }}
-            animate={{ x: "0", opacity: 1 }}
-            key="menu-button"
+    <AnimatePresence mode="wait">
+      {isOpen ? (
+        <MenuModal setIsOpen={setIsOpen} />
+      ) : (
+        <motion.div
+          initial={{ x: "40px", opacity: 0 }}
+          animate={{ x: "0", opacity: 1 }}
+          key="menu-button"
+        >
+          <motion.button
+            className={clsx("hover:cursor-pointer", className)}
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+            }}
           >
             <Menu className="text-lunar-white" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.button>
+          </motion.button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
