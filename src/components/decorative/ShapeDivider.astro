@@ -1,6 +1,7 @@
 ---
 // Components
 import { Image } from "astro:assets";
+import { AnimateIn } from "@/components/decorative";
 
 // Images
 import shapeDivider from "@/assets/images/decorative/triangleAsymmetrical.png";
@@ -8,9 +9,13 @@ import shapeDivider from "@/assets/images/decorative/triangleAsymmetrical.png";
 const { className } = Astro.props as { className: string };
 ---
 
-<Image
-  class={`absolute top-0 left-1/2 -translate-x-1/2 ${className}`}
-  alt=""
-  src={shapeDivider}
-  loading="eager"
-/>
+<div class="absolute top-0 left-1/2 w-full -translate-x-1/2">
+  <AnimateIn y={-60} duration={0.4} initialOpacity={1} client:load>
+    <Image
+      class={`w-full max-h-[60px] ${className}`}
+      alt=""
+      src={shapeDivider}
+      loading="eager"
+    />
+  </AnimateIn>
+</div>
