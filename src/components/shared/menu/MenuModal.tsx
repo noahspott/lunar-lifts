@@ -24,6 +24,7 @@ export default function MenuModal({
           <X
             className="text-lunar-white hover:cursor-pointer"
             onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
           />
         </button>
         <nav className="me-8 mt-48 flex flex-col items-center gap-8">
