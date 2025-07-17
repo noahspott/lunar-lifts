@@ -25,7 +25,11 @@ const { className } = Astro.props as { className: string };
             links.map((link) => {
               return (
                 <li>
-                  <a class="nav-text link-light uppercase" href={link.href}>
+                  <a
+                    class="nav-text link-light group relative uppercase"
+                    href={link.href}
+                  >
+                    <span class="bg-lunar-white absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full" />
                     {link.display}
                   </a>
                 </li>
