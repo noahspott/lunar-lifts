@@ -65,11 +65,13 @@ const steps: StepCardType[] = [
     <ul>
       {
         steps.map((card, index) => (
-          <AnimateOnInView client:load>
-            <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
-              <StepCard stepNumber={index + 1} {...card} />
-            </li>
-          </AnimateOnInView>
+          <li>
+            <AnimateOnInView client:load>
+              <div class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+                <StepCard stepNumber={index + 1} {...card} />
+              </div>
+            </AnimateOnInView>
+          </li>
         ))
       }
     </ul>

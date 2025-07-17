@@ -55,11 +55,13 @@ const whyCards: AboutCardType[] = [
     <ul>
       {
         whyCards.map((card, index) => (
-          <AnimateOnInView client:load>
-            <li class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
-              <AboutCard {...card} />
-            </li>
-          </AnimateOnInView>
+          <li>
+            <AnimateOnInView client:load>
+              <div class="bg-lunar-white shadow-lunar-white/30 mt-24 shadow-2xl">
+                <AboutCard {...card} />
+              </div>
+            </AnimateOnInView>
+          </li>
         ))
       }
     </ul>
