@@ -9,14 +9,21 @@ export type StepCardType = {
   heading: string;
   body: string[];
   src: ImageMetadata;
+  alt?: string;
 };
 
-const { stepNumber, heading, body, src } = Astro.props as StepCardType;
+const {
+  stepNumber,
+  heading,
+  body,
+  src,
+  alt = "",
+} = Astro.props as StepCardType;
 ---
 
-<div class="flex flex-col items-stretch gap-8 md:flex-row">
+<div class="flex flex-col items-stretch md:flex-row md:gap-8">
   <div
-    class="order-last flex flex-1 flex-col gap-8 p-8 sm:p-12 md:order-first md:p-16"
+    class="order-last flex flex-1 flex-col gap-8 px-8 py-16 sm:p-12 md:order-first md:p-16"
   >
     <h3 class="heading-subsection font-2 text-lunar-primary">
       <span class="heading-kicker">Step {stepNumber}:</span>
@@ -32,7 +39,15 @@ const { stepNumber, heading, body, src } = Astro.props as StepCardType;
       }
     </p>
   </div>
-  <div class="bg-lunar-primary flex-1">
-    <Image src={src} alt="" class="h-full object-cover" />
+  <div
+    class="bg-lunar-primary h-auto max-h-[320px] flex-1 overflow-clip md:max-h-[420px]"
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="h-full w-full object-cover opacity-90"
+      widths={[384, 544, 640, 768, 896, 1024]}
+      sizes="(max-width: 767px) 100vw, (min-width: 768px) 40vw"
+    />
   </div>
 </div>
