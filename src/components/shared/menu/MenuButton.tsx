@@ -27,6 +27,7 @@ export default function MenuButton({ className = "" }: { className?: string }) {
             onClick={() => {
               setIsOpen((prev) => !prev);
             }}
+            aria-label="Open menu"
           >
             <Menu className="text-lunar-white" />
           </motion.button>

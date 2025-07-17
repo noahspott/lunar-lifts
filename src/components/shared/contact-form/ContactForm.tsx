@@ -66,12 +66,17 @@ export default function ContactForm({
           </label>
           <textarea
             rows={5}
+            id="message"
             name="message"
             className="bg-lunar-white rounded-xs p-2 text-black"
             placeholder="Tell us about your event..."
           />
         </div>
-        <LinkButton type="submit" isButton>
+        <LinkButton
+          type="submit"
+          ariaLabel="Submit contact form to Lunar Lifts"
+          isButton
+        >
           Submit
         </LinkButton>
       </div>

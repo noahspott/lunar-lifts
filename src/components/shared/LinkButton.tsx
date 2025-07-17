@@ -15,6 +15,7 @@ export default function LinkButton({
   onClick = () => {},
   Icon,
   children = "CLICK HERE",
+  ariaLabel,
 }: {
   href?: string;
   variant?: "PRIMARY" | "SECONDARY";
@@ -28,6 +29,7 @@ export default function LinkButton({
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
   children: React.ReactNode;
+  ariaLabel: string;
 }) {
   const baseStyles =
     "font-heading font-1 border-2 drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase hover:scale-[1.02] transition-all duration-100 active:scale-[0.98]";
@@ -64,11 +66,16 @@ export default function LinkButton({
   );
 
   return !isButton ? (
-    <a className={`${classes}`} href={href}>
+    <a className={`${classes}`} href={href} aria-label={ariaLabel}>
       {Icon ? ChildrenAndIcon : children}
     </a>
   ) : (
-    <button type={type} onClick={(event) => onClick(event)} className={classes}>
+    <button
+      type={type}
+      onClick={(event) => onClick(event)}
+      className={classes}
+      aria-label={ariaLabel}
+    >
       {Icon ? ChildrenAndIcon : children}
     </button>
   );
