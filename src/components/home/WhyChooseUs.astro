@@ -38,15 +38,15 @@ const { className } = Astro.props as { className: string };
     >
       {
         benefits.map((benefit, index) => (
-          <AnimateOnInView client:load delay={index * 0.15}>
-            <li>
+          <li>
+            <AnimateOnInView client:load delay={index * 0.15}>
               <benefit.Icon className="mx-auto mb-8 size-32 stroke-[0.5] text-lunar-primary" />
               <p class="heading-subsection font-2 text-center">
                 {benefit.text[0]} <br />
                 {benefit.text[1]}
               </p>
-            </li>
-          </AnimateOnInView>
+            </AnimateOnInView>
+          </li>
         ))
       }
     </ul>

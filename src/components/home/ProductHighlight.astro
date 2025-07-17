@@ -73,18 +73,20 @@ const products: Product[] = [
       <ul class="flex flex-col gap-16">
         {
           products.map((product, index) => (
-            <AnimateOnInView isFirst={index === 0} client:load>
-              <li
-                class:list={[
-                  "flex w-full pt-16",
-                  { "sm:-rotate-3 sm:px-3": index === 0 },
-                  { "sm:rotate-3 sm:px-4": index === 2 },
-                  { "justify-end": index % 2 !== 0 },
-                ]}
-              >
-                <BigProductCard product={product} />
-              </li>
-            </AnimateOnInView>
+            <li>
+              <AnimateOnInView isFirst={index === 0} client:load>
+                <div
+                  class:list={[
+                    "flex w-full pt-16",
+                    { "sm:-rotate-3 sm:px-3": index === 0 },
+                    { "sm:rotate-3 sm:px-4": index === 2 },
+                    { "justify-end": index % 2 !== 0 },
+                  ]}
+                >
+                  <BigProductCard product={product} />
+                </div>
+              </AnimateOnInView>
+            </li>
           ))
         }
       </ul>

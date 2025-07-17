@@ -84,16 +84,16 @@ const services: ServiceType[] = [
           const isTiltedNeg = isTilted && !isTiltedPos;
 
           return (
-            <AnimateOnInView client:load>
-              <li>
+            <li>
+              <AnimateOnInView client:load>
                 <ServiceCard
                   isImageLeft={isOdd}
                   isTiltedPos={isTiltedPos}
                   isTiltedNeg={isTiltedNeg}
                   {...service}
                 />
-              </li>
-            </AnimateOnInView>
+              </AnimateOnInView>
+            </li>
           );
         })
       }

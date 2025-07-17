@@ -99,8 +99,8 @@ const services: ServiceType[] = [
           const isTiltedNeg = isTilted && !isTiltedPos;
 
           return (
-            <AnimateOnInView client:load>
-              <li>
+            <li>
+              <AnimateOnInView client:load>
                 <ServiceCard
                   isImageLeft={isOdd}
                   isTiltedPos={isTiltedPos}
@@ -108,8 +108,8 @@ const services: ServiceType[] = [
                   {...service}
                   loading={index === 0 ? "eager" : "lazy"}
                 />
-              </li>
-            </AnimateOnInView>
+              </AnimateOnInView>
+            </li>
           );
         })
       }
