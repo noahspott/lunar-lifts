@@ -71,7 +71,7 @@ const products: Product[] = [
       <ul class="flex flex-col gap-16">
         {
           products.map((product, index) => (
-            <AnimateOnInView client:load>
+            <AnimateOnInView isFirst={index === 0} client:load>
               <li
                 class:list={[
                   "flex w-full pt-16",

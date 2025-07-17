@@ -4,12 +4,17 @@ import { useRef } from "react";
 export default function AnimateOnInView({
   children,
   delay = 0,
+  isFirst = false,
 }: {
   children: React.ReactNode;
   delay?: number;
+  isFirst?: boolean;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-150px" });
+  const isInView = useInView(ref, {
+    once: true,
+    margin: isFirst ? "0px" : "-150px",
+  });
 
   return (
     <motion.div
