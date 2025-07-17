@@ -71,7 +71,11 @@ export default function ContactForm({
             placeholder="Tell us about your event..."
           />
         </div>
-        <LinkButton type="submit" isButton>
+        <LinkButton
+          type="submit"
+          ariaLabel="Submit contact form to Lunar Lifts"
+          isButton
+        >
           Submit
         </LinkButton>
       </div>

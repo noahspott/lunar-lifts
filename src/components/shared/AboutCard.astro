@@ -14,6 +14,7 @@ export type AboutCardType = {
   href?: string;
   loading?: "eager" | "lazy";
   alt?: string;
+  ariaLabel: string;
 };
 
 const {
@@ -24,6 +25,7 @@ const {
   href = "/contact",
   loading = "lazy",
   alt = "",
+  ariaLabel,
 } = Astro.props as AboutCardType;
 ---
 
@@ -35,7 +37,7 @@ const {
     <p class="body-copy">{body}</p>
     {
       buttonLabel && (
-        <LinkButton className="self-start" href={href}>
+        <LinkButton ariaLabel={ariaLabel} className="self-start" href={href}>
           {buttonLabel}
         </LinkButton>
       )

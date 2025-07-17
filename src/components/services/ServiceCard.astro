@@ -40,7 +40,11 @@ const {
       Specs:
       {specs.map((spec) => <li>{spec}</li>)}
     </ul>
-    <LinkButton className="self-start" href="/contact">BOOK NOW</LinkButton>
+    <LinkButton
+      ariaLabel="Go to our contact page to book your party rental"
+      className="self-start"
+      href="/contact">BOOK NOW</LinkButton
+    >
   </div>
   <div
     class:list={[
