@@ -3,7 +3,6 @@ import clsx from "clsx";
 
 // Types
 import type { LucideProps } from "lucide-react";
-import { Children } from "react";
 
 export default function LinkButton({
   href = "/",
@@ -31,7 +30,7 @@ export default function LinkButton({
   children: React.ReactNode;
 }) {
   const baseStyles =
-    "font-heading font-1 border-2 drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase";
+    "font-heading font-1 border-2 drop-shadow-2xl select-none hover:cursor-pointer text-center uppercase hover:scale-[1.02] transition-all duration-100 active:scale-[0.98]";
 
   const sizeStyles = {
     SM: "py-3 px-4 text-base",
