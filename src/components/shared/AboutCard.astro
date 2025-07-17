@@ -13,6 +13,7 @@ export type AboutCardType = {
   buttonLabel?: string;
   href?: string;
   loading?: "eager" | "lazy";
+  alt?: string;
 };
 
 const {
@@ -22,6 +23,7 @@ const {
   src,
   href = "/contact",
   loading = "lazy",
+  alt = "",
 } = Astro.props as AboutCardType;
 ---
 
@@ -40,6 +42,13 @@ const {
     }
   </div>
   <div class="bg-lunar-primary flex-1">
-    <Image src={src} class="h-full object-cover" loading={loading} alt="" />
+    <Image
+      src={src}
+      class="h-full object-cover"
+      loading={loading}
+      alt={alt}
+      widths={[384, 544, 640, 768, 896, 1024]}
+      sizes="(max-width: 767px) 100vw, (min-width: 768px) 40vw"
+    />
   </div>
 </div>
