@@ -36,7 +36,7 @@
   }
 
   .link-light {
-    @apply text-lunar-white hover:text-lunar-accent hover:cursor-crosshair;
+    @apply text-lunar-white hover:text-lunar-white/90 hover:cursor-pointer;
   }
 
   .gradient-text-dark {
