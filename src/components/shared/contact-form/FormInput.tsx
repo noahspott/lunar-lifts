@@ -15,10 +15,12 @@ export default function FormInput({
         {label}
       </label>
       <input
+        id={name}
         name={name}
         className="bg-lunar-white appearance-none rounded-xs p-2 text-black"
         type={type}
         required
+        placeholder={placeholder}
       />
     </div>
   );

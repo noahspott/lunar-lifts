@@ -66,6 +66,7 @@ export default function ContactForm({
           </label>
           <textarea
             rows={5}
+            id="message"
             name="message"
             className="bg-lunar-white rounded-xs p-2 text-black"
             placeholder="Tell us about your event..."
